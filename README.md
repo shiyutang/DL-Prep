@@ -2,7 +2,6 @@
 **Key knowledge concerning computer vision and Deeplearning**
 
 
------------------------
 
 ## Notes
 Welcome to fork, pull request and star this project
