@@ -58,8 +58,8 @@
 2. 使用nn.DataParallel函数将模型包起来，并传入指定的GPU
 3. 将模型和数据都.cuda() 传入GPU
 
-数据并行（nn.distributed）--需要有batchsize>1才可以
-\# todo:nn.distribute
+数据并行（ nn.distributed ）--需要有batchsize>1才可以
+**todo**: nn.distribute
 
 模型并行：
 
