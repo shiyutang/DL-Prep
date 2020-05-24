@@ -4,9 +4,9 @@
 1. [数学相关(Math)](./Math/Readme.md)
 2. [机器学习基础相关(ML)](./ML_Questions/Readme.md)
 3. [深度学习相关(DL)](./DL_Questions/Readme.md)
-4. [计算机视觉相关(CV)](./CV_Questions/Readme.md)
-5. [基础算法题相关(AL)](./Algorithms/Readme.md)
-6. [算法语言相关(LA)](./Language/Readme.md)
+4. [基础算法题相关(AL)](./Algorithms/Readme.md)
+5. [算法语言相关(LA)](./Language/Readme.md)
+6. [面试题(IQ)](./Interview_Questions/Readme.md)
 
 
 ## Notes
