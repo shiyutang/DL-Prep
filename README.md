@@ -1,5 +1,6 @@
 # DL-Prep
-**Key knowledge concerning Deep Learning and Algorithms**
+**深度学习基础知识，算法，面试题**
+**由 UESTC DL 学习小组开发和维护**
 
 1. [数学相关(Math)](01_Math/README.md)
 2. [机器学习基础相关(ML)](02_ML_knowledge/README.md)
@@ -10,7 +11,11 @@
 6. [面试题(IQ)](07_Interview_Questions/README.md)
 
 
-## Notes
-Welcome to fork, pull request and star this project
+## Contribute Note
+0. 当需要更改前，增加一个新的branch，确认自己的更改好之后，再和master合并
+1. 当需要添加新知识时，可以对照目录，插入到对应的位置，并按照格式增加目录和在相应位置增加内容
+2. 大纲和格式可能有错漏，欢迎互相指正修改~
 
-Our knowlege is limited, so if any mistake happens, please not hesitate to write issue to stay in contact. 
+## 其他
+欢迎大家fork, pull request, star这个项目
+大部分都是手打，根据资料整理，如有问题，欢迎fork之后pull request 或者issue中提出，我们会尽可能及时回复
