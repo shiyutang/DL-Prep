@@ -21,11 +21,11 @@
 ### 增加了 Jupyter Notebook之后
 我们将在 README.md 的基础上增加 Jupyter Notebook， 这样，我们可以方便在本地查看公式，并运行代码。MD则在 Github 上可以提供大纲的预览。
 建议的方式是：
-- 查看：将 Github 的仓库拉取到本地，并在本地 launch Jupyter Server 进行查看
-- 修改：新开 branch 后在 Pycharm 等编辑器中编辑，编辑 Jupyter Notebook 的同时，我们需要在MD里面进行目录的同步。并用【查看】的方式预览编辑效果
+- 查看：将 Github 的仓库拉取到本地，并在本地 launch Jupyter Server 进行查看，查看时先打开第一层级的 README.ipynb 进行索引
+- 修改：新开 branch 后在 Pycharm / Jupyter Notebook 等编辑器中编辑，编辑 Jupyter Notebook 的同时，我们需要在MD里面进行目录的同步。并用【查看】的方式预览编辑效果
 - 合并：本地修改好了之后，使用 Git commit， Git push， 再在本地或者云端merge
 
-原则是：Jupyter Notebook 负责内容，因此 MarkDown 中有的内容，Jupyter Notebook 中一定会有； 同时 Readme.md 提供预览，因此需要有大纲和相关说明。 
+原则是：Jupyter Notebook 负责内容，因此 MarkDown 中有的内容，Jupyter Notebook 中一定会有； 同时 Readme.md 提供预览，因此需要有大纲和相关说明。
 先行编辑 Jupyter Notebook，之后在 MarkDown 中相应更新。
 
 ### 如何添加 Anchor ？
