@@ -5,6 +5,7 @@
     * 数据并行
     * 数据并行(nn.distributed) \* [todo]
     * 模型并行
+    * pytorch的dataparallel
 
 * [2. 目标检测](#2.目标检测) 
     * 1.算法有哪些？他们的对比？
@@ -16,6 +17,22 @@
     * 2.简述一下YOLOv2的原理，v1和v2有什么区别？
     * 3.非极大抑制是什么，有什么作用？
     * 4.如何实现mOU 和非极大抑制？
+    * 5.nms的发展（greedy-nms，soft-nms，fast-nms，matrix-nms） \* [todo]
+    * 6.YOLOv2为什么将输入尺寸从448降到416 \* [todo]
+    * 7.YOLOv2对于anchor的使用与faster-rcnn有何不同  \* [todo]
+    * 8.YOLOv2,v3一个anchor可以对应几个GT？SSD呢？RCNN系列呢？ \* [todo]
+    * 9.YOLOv3对于v2做了怎样的改进？ \* [todo]
+    * 10.YOLOv2与v3筛选正负样本的方式类似，具体是怎样进行的？这种操作解决了什么问题？ \* [todo]
+    * 11.YOLOv3的多尺度输出结构与FPN有何不同？ \* [todo]
+    * 12.YOLOv2,v3的anchor聚类如何做？指标是什么？ \* [todo]
+    * 13.FPN的多尺度输出结构与SSD的多尺度输出结构哪个效果更好 \* [todo]
+    * 14.faster-rcnn在撒anchor的时候，是如何把特征图坐标映射到图像上的？ \* [todo]
+    * 15.faster-rcnn的OHEM与ssd的OHEM有何不同 \* [todo]
+    * 16.roi pooling与roi align的具体操作 \* [todo]
+    * 17.retinanet解决了以往one-stage检测器的什么问题 \* [todo]
+    * 18.Focal loss一定有效吗？为什么？试举出一个例子 \* [todo]
+    * 19.Cascade-rcnn解决了什么问题？ \* [todo]
+    * 20.anchor-free的方式大概分为哪两种？各有什么特点？ \* [todo]
 
 * [3. 循环卷积神经网络](#3.循环卷积神经网络) 
     * 1.LSTM为什么会导致梯度爆炸？要如何解决？
@@ -34,11 +51,17 @@
     * 3.两层较小的卷积核和一个较大的卷积核比较，各有什么缺点和优点？
     * 4.不同激活函数有什么区别？
     * 5.卷积层输出大小的计算?
-    * 6.dropout层为什么可以促进正则化？
+    * 6.dropout层为什么可以促进正则化？pytorch中dropout在训练与测试时如何使用？
     * 7.平方误差损失函数和交叉熵损失函数分别适用于什么场景？
     * 8.梯度消失/爆炸的原因?
     * 9.损失降不下来怎么办？
     * 10.weight decay vs L2 正则项
+    * 11.avarage-pooling与max-pooling的区别与联系？它们的梯度反传如何进行？
+    * 12.各种normalization层了解多少？(包括SyncBN)
+    * 13.为什么学习率的设置要与batchsize成线型关系
+    * 14.ReLU有哪些改进的方式
+    * 15.神经网络中参数中的偏置bias有什么作用
+    * 16.caffe的im2col是怎么操作的？ \* [todo]
 
 * [7. 神经网络训练场景问题](#7.神经网络训练场景问题)
     * 1.怎么判断过拟合，怎么处理？
