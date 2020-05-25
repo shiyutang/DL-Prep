@@ -194,7 +194,7 @@ _性质_: softmax函数的常数不变性，即 softmax(x)=softmax(x+c)：对需
 
 <div align=center>  
 
-![alt text](../Pics/softmax.png "softmax 常数不变性")   
+![alt text](Pics/softmax.png "softmax 常数不变性")   
 
 </div>
 
@@ -216,7 +216,7 @@ _定义_：分类模型用于将输入的图片/信号进行分类，本单元�
 _交叉熵函数_：上节的回归问题，我们用到了MSE，因为我们希望线性模型的参数和真实的完全一致，但是在分类模型中，我们只希望真实类别对应的概率越大越好，其他概率的具体数值对损失并没有过多含义。因此，这里使用了交叉熵函数，通过将标签化为one-hot编码，使得损失函数只关注正确类别对应的概率大小,其函数表达和实例操作如下：
 <div align=center> 
 
-![Image Name](../Pics/cross_ent.png) 
+![Image Name](Pics/cross_ent.png) 
 
 </div>
 
@@ -235,7 +235,7 @@ _定义_：拥有非线性部分的函数，即函数的导数并非处处一致
 
 <div align=center>  
 
-![Untitled/Untitled.png](../Pics/activation.png)
+![Untitled/Untitled.png](Pics/activation.png)
 
 </div>
 
@@ -297,21 +297,21 @@ _过拟合_：当训练误差已经较小，但是验证误差和训练误差相
     具体表达式以线性回归模型的损失函数为例：
     <div align=center>  
     
-    ![Untitled/Untitled.png](../Pics/linearloss.png)
+    ![Untitled/Untitled.png](Pics/linearloss.png)
 
     </div>
 
     正则项则是参数的二范数:
     <div align=center>  
     
-    ![Untitled/Untitled.png](../Pics/loss_reg.png)
+    ![Untitled/Untitled.png](Pics/loss_reg.png)
 
     </div>
 
     最终，根据SGD的参数更新方式，我们可以得到如下更新公式：
     <div align=center>  
     
-    ![Untitled/Untitled.png](../Pics/SGDupdate.png)
+    ![Untitled/Untitled.png](Pics/SGDupdate.png)
 
     </div>
 
@@ -354,7 +354,7 @@ _梯度爆炸_：对应于梯度消失，梯度爆炸则代表神经元的梯度
 Xavier初始化：将权重参数初始化到：
 <div align=center>  
 
-![Untitled/Untitled.png](../Pics/Uniform.png)
+![Untitled/Untitled.png](Pics/Uniform.png)
 
 </div>
 
@@ -379,13 +379,13 @@ Xavier初始化：将权重参数初始化到：
 卷积运算公式：
 <div align=center>  
 
-![Untitled/Untitled.png](../Pics/conv.png)
+![Untitled/Untitled.png](Pics/conv.png)
 
 </div>
 互相关运算公式：
 <div align=center>  
 
-![Untitled/Untitled.png](../Pics/corr.png)
+![Untitled/Untitled.png](Pics/corr.png)
 
 </div>
 
@@ -393,13 +393,13 @@ Xavier初始化：将权重参数初始化到：
 
 <div align=center>  
 
-![Untitled/Untitled.png](../Pics/convmulc.png)
+![Untitled/Untitled.png](Pics/convmulc.png)
 
 </div>
 
 <div align=center>  
 
-![Untitled/Untitled.png](../Pics/convbias.png)
+![Untitled/Untitled.png](Pics/convbias.png)
 
 </div>
 
@@ -412,7 +412,7 @@ Xavier初始化：将权重参数初始化到：
 * 输入输出尺寸对应：设输入单边长度为lin，那么对应的输出单边长度为lout，而卷积核的单边长度为k
 <div align=center>  
 
-![Untitled/Untitled.png](../Pics/convsize.gif)
+![Untitled/Untitled.png](Pics/convsize.gif)
 
 </div>
 
@@ -426,7 +426,7 @@ Xavier初始化：将权重参数初始化到：
 如果下采样是最大汇聚，误差项 𝛿(𝑙+1,𝑝) 中每个值会直接传递到上一层对应区域中的最大值所对应的神经元，该区域中其他神经元的误差项都设为0．如果下采样是平均汇聚，误差项𝛿(𝑙+1,𝑝) 中每个值会被平均分配到上一层对应区域中的所有神经元上
 <div align=center>  
 
-![Untitled/Untitled.png](../Pics/poolgrad.png)
+![Untitled/Untitled.png](Pics/poolgrad.png)
 
 </div>
 
@@ -434,7 +434,7 @@ Xavier初始化：将权重参数初始化到：
 通过组合卷积层，汇聚层，全连接层，卷积层用来识别图像里的空间模式，之后池化层用来降低卷积层对位置的敏感性,最后全连接层对物体进行分类。我们就可以获得以下一般的卷积神经网络结构：
 <div align=center>  
 
-![Untitled/Untitled.png](../Pics/convstruct.png)
+![Untitled/Untitled.png](Pics/convstruct.png)
 
 </div>
 
@@ -448,7 +448,7 @@ Lenet的网络结构也遵循了我们之前提到的（卷积+激活+池化）*
 * 全连接层块含3个全连接层。它们的输出个数分别是120、84和10，其中10为输出的类别个数。
 <div align=center>  
 
-![Untitled/Untitled.png](../Pics/lenet.png)
+![Untitled/Untitled.png](Pics/lenet.png)
 
 </div>
 
@@ -469,7 +469,7 @@ Lenet的网络结构也遵循了我们之前提到的（卷积+激活+池化）*
 群卷积有助于减小参数的数量，但是其限制了每个卷积核对于通道的访问，从而限制了特征的组合。下图阐述了群卷积的运行：
 <div align=center>  
 
-![Untitled/Untitled.png](../Pics/gconv.png)
+![Untitled/Untitled.png](Pics/gconv.png)
 </div>
 
 

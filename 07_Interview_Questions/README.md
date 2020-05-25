@@ -71,7 +71,7 @@
 主要算法有 rcnn（region-convnet）系列，SSD，Retina net，yolov1v2v3等，其中rcnn网络为两阶段网络，即将目标检测中的定位和识别任务分为两个步骤进行解决，缺点在于速度较慢，优点在于准确度较高
     1. RCNN：
 
-        ![Pics/Untitled.png](../Pics/Untitled.png)
+        ![Pics/Untitled.png](Pics/Untitled.png)
 
         首先使用selective search（评估图像相邻部分的相似度并将相似度高的部分合并并打分，选出评分较高的2000个子图）在原始图片中选择出子图；
 
@@ -91,7 +91,7 @@
         - 将整图只通过一次CNN网络就提取所有ROI的特征。因为2000个子图在原图上有很多重叠，因此每个子图都通过一个特征提取网络是费时费力的，因此，通过区域投影的方式，将整图通过特征提取网络，再利用区域投影将整图的特征取出ROI的那一部分，即可通过一次特征提取网络，得到所有的ROI的特征
     3. faster RCNN：
 
-        ![Pics/Untitled%201.png](../Pics/Untitled%201.png)
+        ![Pics/Untitled%201.png](Pics/Untitled%201.png)
 
         这个部分的改进是将原本的ROI提取方法—selective search 改为了Region Proposal Network，这样大大增加了提取目标框的速度。RPN网络通过在原始卷积层上提取的特征经过进一步3*3卷积增加感受野，得到了提取ROI和调整ROI边界两个支路，
 
@@ -114,7 +114,7 @@
 
     4. YOLO
 
-        ![Pics/Untitled%202.png](../Pics/Untitled%202.png)
+        ![Pics/Untitled%202.png](Pics/Untitled%202.png)
 
         在网络结构上，YOLO分为三个部分，第一个部分是特征提取网络，用于提取有用的可泛化的特征，第二部分为目标检测网络，在目标检测网络之后，就获得了7*7*30的输出结果，这个部分相当于将原图分为了7*7的网格，每个网格预测两个长宽不同的anchor的位置和长宽，以及这两个anchor的置信分数（是否有目标*和真实bbox的IOU）以及这个格子内的物体属于哪一个类别。
 
@@ -123,7 +123,7 @@
                 而为了表示边界框，需要使用（x,y,w,h）表示，结合上置信度，则每个边界框预测（x,y,w,h,c）。
                 除此之外，对于每个格子会预测一组条件类别概率C，因此每个格子会产生（B*5+C）大小的向量，总共就是（S*S,B*5+C）
 
-        ![Pics/Untitled%203.png](../Pics/Untitled%203.png)
+        ![Pics/Untitled%203.png](Pics/Untitled%203.png)
 
         损失函数中，使用了MSEloss，对于不同类别的误差采取了系数进行调控。
 
@@ -135,7 +135,7 @@
         4. 对于图片中比较小的物体，效果很差。这其实是所有目标检测算法的通病，SSD对它有些优化，我们后面再看。
     5. SSD Single Shot MultiBox Detector
 
-        ![Pics/Untitled%204.png](../Pics/Untitled%204.png)
+        ![Pics/Untitled%204.png](Pics/Untitled%204.png)
 
         相比Yolo，SSD采用CNN来直接进行检测，而不是像Yolo那样在全连接层之后做检测。SSD提取了不同尺度的特征图来做检测，大尺度特征图（较靠前的特征图）可以用来检测小物体，而小尺度特征图（较靠后的特征图）用来检测大物体；
 
@@ -162,7 +162,7 @@ NMS算法主要解决的是一个目标被多次检测的问题，如图11中人
 
     本层的kernelsize*上一层的感受野-（上一层kernelsize-1）*（上一层的感受野-前面stride的连乘积）其中rn代表第n层的感受野，kn，sn代表第n层的kernel size，stride
 
-    ![Pics/Untitled%205.png](../Pics/Untitled%205.png)
+    ![Pics/Untitled%205.png](Pics/Untitled%205.png)
 
     [深度神经网络中的感受野(Receptive Field)](https://zhuanlan.zhihu.com/p/28492837)
 
@@ -221,11 +221,11 @@ dropout通过不断抛去一些神经元，限制了网络的表达能力，从�
 10. weight decay vs L2 正则项：
        weight decay 是在更新网络权重的时候，减去一个权重很小的一部分（比如说lambda1 = 0.0005），其直接作用在网络权重更新上，直接减少权重。L2正则项则是作用在损失函数上，使得网络权重在更新时也会减去权重本身的一部分，一般来说当正则项的惩罚系数设置成（lambda2 = lambda1/2），可以等效两种正则系数。
 
-    ![Pics/Untitled%206.png](../Pics/Untitled%206.png)
+    ![Pics/Untitled%206.png](Pics/Untitled%206.png)
 
                                weight decay vs L2 正则项
 
-    ![Pics/Untitled%207.png](../Pics/Untitled%207.png)
+    ![Pics/Untitled%207.png](Pics/Untitled%207.png)
 
                                        L1 正则项 vs L2 正则项
 
