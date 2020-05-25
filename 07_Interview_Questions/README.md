@@ -16,7 +16,7 @@
         * SSD
     * 2.简述一下YOLOv2的原理，v1和v2有什么区别？
     * 3.非极大抑制是什么，有什么作用？
-    * 4.如何实现mOU 和非极大抑制？
+    * 4.如何实现mOU 和非极大抑制？即手推计算过程。
     * 5.nms的发展（greedy-nms，soft-nms，fast-nms，matrix-nms） \* [todo]
     * 6.YOLOv2为什么将输入尺寸从448降到416 \* [todo]
     * 7.YOLOv2对于anchor的使用与faster-rcnn有何不同  \* [todo]
@@ -31,8 +31,9 @@
     * 16.roi pooling与roi align的具体操作 \* [todo]
     * 17.retinanet解决了以往one-stage检测器的什么问题 \* [todo]
     * 18.Focal loss一定有效吗？为什么？试举出一个例子 \* [todo]
-    * 19.Cascade-rcnn解决了什么问题？ \* [todo]
+    * 19.介绍cascade-RCNN和DCN模块。Cascade-rcnn解决了什么问题？cascade-RCNN一般选用几个阶段？ \* [todo]
     * 20.anchor-free的方式大概分为哪两种？各有什么特点？ \* [todo]
+    * 21.coco的mAP的计算公式 \* [todo]
 
 * [3. 循环卷积神经网络](#3.循环卷积神经网络) 
     * 1.LSTM为什么会导致梯度爆炸？要如何解决？
@@ -41,9 +42,14 @@
     * 1.主要语义分割的算法有哪些，他们有什么区别？
     * 2.deeplabv3的核心是什么？
     * 3.感受野会受到什么因素的影响？怎么影响？
+    * 4.介绍空洞卷积以及DeepLabv3中的ASPP模块 \* [todo]
+    * 5.双线性插值，转置卷积和反卷积的区别与联系 \* [todo]
+    * 6.介绍语义分割、实例分割和全景分割 \* [todo]
+    * 7.后处理方法：CRF \* [todo]
 
 * [5. Backbone](#5.Backbone) 
     * 1.resnet中的恒等快捷连接在前向传播和反向传播都有什么作用？
+    * 2.ResNet和ResNeXt的区别 \* [todo]
 
 * [6. 卷积神经网络基础](#6.卷积神经网络基础)
     * 1.Batch Normalization 在卷积神经网络中的作用是什么?
@@ -71,3 +77,11 @@
     * 1.装饰器是什么，有什么作用？
     * 2.迭代器
     * 3.生成器
+    * 4.深拷贝与浅拷贝的区别 \* [todo]
+    * 5.Python中is和==的区别
+    * 6.解释with语句
+    * 7.什么是面向对象？面向过程和面向对象的区别？
+* [9. 机器学习](#9.机器学习)
+    * 1.讲讲逻辑回归和支持向量机 \* [todo]
+    * 2.手写逻辑回归的损失函数 \* [todo]
+* [10.传统图像处理](#10.传统图像处理)
