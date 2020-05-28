@@ -19,21 +19,21 @@
     * 4.如何实现mOU 和非极大抑制？即手推计算过程。
     * 5.nms的发展（greedy-nms，soft-nms，fast-nms，matrix-nms） \* [todo]
     * 6.YOLOv2为什么将输入尺寸从448降到416 \* [todo]
-    * 7.YOLOv2对于anchor的使用与faster-rcnn有何不同  \* [todo]
-    * 8.YOLOv2,v3一个anchor可以对应几个GT？SSD呢？RCNN系列呢？ \* [todo]
-    * 9.YOLOv3对于v2做了怎样的改进？ \* [todo]
-    * 10.YOLOv2与v3筛选正负样本的方式类似，具体是怎样进行的？这种操作解决了什么问题？ \* [todo]
-    * 11.YOLOv3的多尺度输出结构与FPN有何不同？ \* [todo]
-    * 12.YOLOv2,v3的anchor聚类如何做？指标是什么？ \* [todo]
-    * 13.FPN的多尺度输出结构与SSD的多尺度输出结构哪个效果更好 \* [todo]
-    * 14.faster-rcnn在撒anchor的时候，是如何把特征图坐标映射到图像上的？ \* [todo]
-    * 15.faster-rcnn的OHEM与ssd的OHEM有何不同 \* [todo]
-    * 16.roi pooling与roi align的具体操作 \* [todo]
-    * 17.retinanet解决了以往one-stage检测器的什么问题 \* [todo]
-    * 18.Focal loss一定有效吗？为什么？试举出一个例子 \* [todo]
-    * 19.介绍cascade-RCNN和DCN模块。Cascade-rcnn解决了什么问题？cascade-RCNN一般选用几个阶段？ \* [todo]
-    * 20.anchor-free的方式大概分为哪两种？各有什么特点？ \* [todo]
-    * 21.coco的mAP的计算公式 \* [todo]
+    * 7.YOLOv2对于anchor的使用与faster-rcnn有何不同
+    * 8.YOLOv2,v3一个anchor可以对应几个GT？SSD呢？RCNN系列呢？
+    * 9.YOLOv3对于v2做了怎样的改进？
+    * 10.YOLOv2与v3筛选正负样本的方式类似，具体是怎样进行的？这种操作解决了什么问题？
+    * 11.YOLOv3的多尺度输出结构与FPN有何不同？
+    * 12.YOLOv2,v3的anchor聚类如何做？指标是什么？
+    * 13.FPN的多尺度输出结构与SSD的多尺度输出结构哪个效果更好
+    * 14.faster-rcnn在撒anchor的时候，是如何把特征图坐标映射到图像上的？
+    * 15.faster-rcnn的OHEM与ssd的OHEM有何不同
+    * 16.roi pooling与roi align的具体操作
+    * 17.retinanet解决了以往one-stage检测器的什么问题
+    * 18.Focal loss一定有效吗？为什么？试举出一个例子
+    * 19.介绍cascade-RCNN和DCN模块。Cascade-rcnn解决了什么问题？cascade-RCNN一般选用几个阶段？
+    * 20.anchor-free的方式大概分为哪两种？各有什么特点？
+    * 21.coco的mAP的计算公式
 
 * [3. 循环卷积神经网络](#3.循环卷积神经网络) 
     * 1.LSTM为什么会导致梯度爆炸？要如何解决？
@@ -50,6 +50,10 @@
 * [5. Backbone](#5.Backbone) 
     * 1.resnet中的恒等快捷连接在前向传播和反向传播都有什么作用？
     * 2.ResNet和ResNeXt的区别 \* [todo]
+    * 3.Inception中的deep supervision有什么作用 \* [todo]  
+    * 4.resnet的shortcut结构有什么缺点?如何改进? \* [todo]    
+    * 5.resnet的post activation有什么作用? \* [todo]  
+    * 6.shufflenet的shuffle操作如何进行? \* [todo]  
 
 * [6. 卷积神经网络基础](#6.卷积神经网络基础)
     * 1.Batch Normalization 在卷积神经网络中的作用是什么?

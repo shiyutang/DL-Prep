@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40bc1694-4c9e-4d86-97a6-aaba0f332381" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/07_Interview_Questions/.ipynb_checkpoints/README-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/07_Interview_Questions/.ipynb_checkpoints/README-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07_Interview_Questions/README.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/07_Interview_Questions/README.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/07_Interview_Questions/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/07_Interview_Questions/README.md" afterDir="false" />
     </list>
@@ -17,8 +19,8 @@
         <entry file="file://$PROJECT_DIR$/07_Interview_Questions/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="818">
-                <caret line="63" column="38" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+              <first_editor relative-caret-position="-323">
+                <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
               </first_editor>
               <second_editor />
             </state>
@@ -48,8 +50,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="117" />
-    <option name="y" value="570" />
+    <option name="x" value="65" />
+    <option name="y" value="52" />
     <option name="width" value="1855" />
     <option name="height" value="1028" />
   </component>
@@ -58,7 +60,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -75,9 +76,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -106,19 +109,20 @@
       <option name="presentableId" value="Default" />
       <updated>1590394227564</updated>
       <workItem from="1590394228711" duration="2738000" />
-      <workItem from="1590400690668" duration="679000" />
+      <workItem from="1590400690668" duration="1286000" />
+      <workItem from="1590648247708" duration="88000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3417000" />
+    <option name="totallyTimeSpent" value="4112000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="52" width="1855" height="1028" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.50418997" side_tool="true" weight="0.3161968" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49581006" visible="true" weight="0.16639027" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49581006" visible="true" weight="0.16804865" />
       <window_info id="Structure" order="2" sideWeight="0.50196594" side_tool="true" weight="0.29906026" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32925585" />
@@ -147,8 +151,8 @@
     <entry file="file://$PROJECT_DIR$/07_Interview_Questions/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="818">
-            <caret line="63" column="38" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+          <first_editor relative-caret-position="-323">
+            <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
           </first_editor>
           <second_editor />
         </state>
