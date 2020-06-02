@@ -4,7 +4,7 @@
 
 1. [数学相关(Math)](01_Math/README.ipynb)
 2. [机器学习基础相关(ML)](02_ML_knowledge/README.ipynb)
-3. [深度学习相关(DL)](03_DL_knowledge/README.ipynb)
+3. [深度学习相关(DL)](03_DL_knowledge/README.md)
 4. [基础算法题相关(AL)](04_Algorithms/README.ipynb)
 5. [语言相关(LA)](05_Language/README.ipynb)
 6. [深度学习框架(DF)](06_DL_framework/README.ipynb)
