@@ -1,0 +1,14 @@
+blacklist: 
+6. ZigZag Conversion  Medium 1049 vs 3264
+8. String to Integer (atoi) Medium 953 vs 6058
+13. Roman to Integer      Easy  1440 vs 2865
+27. Remove Element      950 vs 2022
+28. Implement strStr()   1037 vs 1490
+29. Divide Two Integers  773 vs 3745
+65. Valid Number  hard    506 vs 3619
+68. Text Justification   hard  421 vs 1154
+
+todoList：
+10. Regular Expression Matching
+18. 4Sum
+22. Generate Parentheses
