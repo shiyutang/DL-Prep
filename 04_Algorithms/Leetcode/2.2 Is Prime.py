@@ -29,24 +29,41 @@ def is_prime_num(n):
             return False
     return True
 
+# 返回小于r的素数列表 需要时间大于埃式筛法
+def oulashai(r):
+    prime = [0 for i in range(r + 1)]
+    common = []
+    for i in range(2, r + 1):
+        if prime[i] == 0:
+            common.append(i)
+        for j in common:
+            if i * j > r:
+                break
+            prime[i * j] = 1
+            if i % j == 0:
+                break
+    return common
 
 # test
 def test(method):
     t1 = time()
     if "era" in method:
-        res = eratosthenes(12000)
-    else:
+        res = eratosthenes(120000)
+    elif "isp":
         res = []
-        for i in range(2, 12000):
+        for i in range(2, 120000):
             if is_prime_num(i):
                 res.append(i)
+    else:
+        res = oulashai(120000)
     t2 = time()
     return res, t2 - t1
 
 
 result1, time1 = test("era")
+result2, time2 = test("oula")
 result3, time3 = test("isp")
 
-if not result1 == result3:
+if not result2 == result1:
     print("result1 is {} \nresult2 is {}".format(result1, result3))
-print("era needs {} secs; isp needs {} secs".format(time1, time3))
+print("era needs {} secs; oula needs {} secs".format(time1, time2))

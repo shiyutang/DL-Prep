@@ -1,3 +1,34 @@
+# test
+def test(method, random_samples=False):
+    # test settings
+    times = 10
+
+    sol = method()
+    coins, amount = [1, 2, 5], 11
+    print(coins, end=' ')
+    res = sol.coinChange(coins, amount)
+    print(' and the minimum coinchange is ', res)
+
+    if random_samples:
+        import random
+
+        for _ in range(times):
+            len1 = random.randint(0, 20)
+            nums = []
+            for __ in range(len1):
+                num1 = random.randint(1, 20)
+                nums.append(num1)
+            nums = list(set(nums))
+            amount = random.randint(0, 100)
+            print('the coinage are', nums)
+            res = sol.coinChange(nums, amount)
+            print(' and the minimum combinations for amount {} is {}'.format(amount, res))
+
+
+test(Solution, True)
+
+
+
 # def ans(n,num,query):
 #     for i in range(n):
 #         for j in range(i+1,n):
@@ -24,11 +55,6 @@
 # a.pop(-1)
 
 
-
-
-
-# print(102%10)
-# print((152//100)%10)
 
 
 

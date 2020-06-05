@@ -1,13 +1,16 @@
 import json
 
+
 class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
 
+
 def stringToIntegerList(input):
     # print('input',input)
     return json.loads(input)
+
 
 def stringToListNode(input):
     # Generate list from the input
@@ -24,6 +27,7 @@ def stringToListNode(input):
 
     ptr = dummyRoot.next
     return ptr
+
 
 def prettyPrintLinkedList(node):
     while node and node.next:
@@ -53,43 +57,41 @@ def main():
             break
 
 
-
 class Solution:
     def rotateRight(self, head: ListNode, k: int) -> ListNode:
         count = 0
         tmphead = head
         while tmphead:
-        	count += 1
-        	tmphead = tmphead.next
+            count += 1
+            tmphead = tmphead.next
         if count == 1 or count == 0:
-        	return head
+            return head
 
-        k = k%count
+        k = k % count
 
         if count == k or k == 0:
-        	return head
-        
+            return head
+
         # here listLen >=2	
         splitPointpre = head
         splitPoint = head.next
-        for i in range(count-k-1):
-        	splitPoint = splitPoint.next
-        	splitPointpre = splitPointpre.next
+        for i in range(count - k - 1):
+            splitPoint = splitPoint.next
+            splitPointpre = splitPointpre.next
 
         # print(splitPoint.val)
         splitPointpre.next = None
         newhead = splitPoint
         while splitPoint.next:
-        	splitPoint = splitPoint.next
+            splitPoint = splitPoint.next
         splitPoint.next = head
 
         return newhead
 
+
 sol = Solution()
 # head = stringToListNode([1,2,3,4,5])
 # prettyPrintLinkedList(sol.rotateRight(head,2))
-head = stringToListNode([0,1,2])
-prettyPrintLinkedList(sol.rotateRight(head,4))
-
-
-
+head = stringToListNode([0, 1, 2])
+prettyPrintLinkedList(head)
+prettyPrintLinkedList(sol.rotateRight(head, 4))
