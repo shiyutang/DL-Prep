@@ -1,6 +1,3 @@
-## this will print a BST in matrix
-
-
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -61,50 +58,55 @@ def list2Tree(data):
     return tree
 
 
-if __name__ == '__main__':
-    data = [3, 5, 2, 1, 4, 6, 7, 8, 9, 0, 1, 2, 3, 4]
-    data = [5, 1, 4, None, None, 3, 6]
-    data = [17, 6, None, 5, 20, 3, 14, 20, 16, 9, 15, 10, 3, 17, None]
+class Solution:
+    def inorderTraversal(self, root: TreeNode):
+        res = []
+
+        def helper(root):
+            if root.left:
+                helper(root.left)
+            res.append(root.val)
+            if root.right:
+                helper(root.right)
+
+        if not root:
+            return []
+        else:
+            helper(root)
+            return res
+
+
+# test
+def test(method, random_samples=False):
+    # test settings
+    times = 10
+
+    sol = method()
+    data = [5, 1, 7, None, None, 6, 8]
+    data = [10, 5, 15, None, None, 6, 20]
+
     tree = list2Tree(data)
-
     printT = PrintTree()
-    res = printT.printTree(tree)
+    printT.printTree(tree)
 
-    # test
-    def test(method, random_samples=False):
-        # test settings
-        times = 10
+    res = sol.inorderTraversal(tree)
+    print('the res is', res)
 
-        sol = method()
-        data = [5, 1, 7, None, None, 6, 8]
-        # data = [2, 1, 3]
-        # data = [3, 1, 5, 0, 2, 4, 6]
-        data = [10, 5, 15, None, None, 6, 20]
-        from L98_test_case import data
+    if random_samples:  # There are other rules constain the data, so it cannot be truly simulate by following code
+        import random
 
-        tree = list2Tree(data)
-        printT = PrintTree()
-        printT.printTree(tree)
+        for _ in range(times):
+            len1 = random.randint(0, 20)
+            data = []
+            for __ in range(len1):
+                num1 = random.sample([random.randint(1, 20) for i in range(20)] + [None], 1)
+                data += num1
+            tree = list2Tree(data)
+            printT = PrintTree()
+            printT.printTree(tree)
 
-        res = sol.isValidBST(tree)
-        print('the tree {} BST '.format(["isn\'t", "is"][res]))
-
-        if random_samples:  # There are other rules constain the data, so it cannot be truly simulate by following code
-            import random
-
-            for _ in range(times):
-                len1 = random.randint(0, 20)
-                data = []
-                for __ in range(len1):
-                    num1 = random.sample([random.randint(1, 20) for i in range(20)] + [None], 1)
-                    data += num1
-                print(data)
-                tree = list2Tree(data)
-                printT = PrintTree()
-                printT.printTree(tree)
-
-                res = sol.isValidBST(tree)
-                print('the tree {} BST '.format(["isn\'t", "is"][res]))
+            res = sol.inorderTraversal(tree)
+            print('the res is', res)
 
 
-    test(Solution, True)
+test(Solution, True)
