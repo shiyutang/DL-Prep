@@ -1,5 +1,5 @@
 class Solution:
-    def rob(self, root) -> int:
+    def rob(self, root) -> int:  # 可以参考1376题，使用dfs做，这样不需要存储结果还能更快
         memoi = {}
 
         def helper(node, state):  # calculate the max val this node'child can gain

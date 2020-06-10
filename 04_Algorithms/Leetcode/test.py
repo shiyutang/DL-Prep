@@ -1,13 +1,11 @@
-# test
 def test(method, random_samples=False):
     # test settings
     times = 10
 
     sol = method()
-    coins, amount = [1, 2, 5], 11
-    print(coins, end=' ')
-    res = sol.coinChange(coins, amount)
-    print(' and the minimum coinchange is ', res)
+    data = [1, 1, 1, 1, 2, 2, 2, 2, 2, 2]
+    res = sol.hasGroupsSizeX(data)
+    print(res)
 
     if random_samples:
         import random
@@ -16,13 +14,11 @@ def test(method, random_samples=False):
             len1 = random.randint(0, 20)
             nums = []
             for __ in range(len1):
-                num1 = random.randint(1, 20)
+                num1 = random.randint(1, 3)
                 nums.append(num1)
-            nums = list(set(nums))
-            amount = random.randint(0, 100)
-            print('the coinage are', nums)
-            res = sol.coinChange(nums, amount)
-            print(' and the minimum combinations for amount {} is {}'.format(amount, res))
+            print('the nums are', nums)
+            res = sol.hasGroupsSizeX(data)
+            print(res)
 
 
 test(Solution, True)
