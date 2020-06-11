@@ -1,5 +1,9 @@
+from datetime import time
+
 import matplotlib.pyplot as plt
 import numpy as np
+import torch
+from torch import nn
 
 
 def train_2d(trainer, steps=20):
@@ -28,8 +32,8 @@ def show_trace(res, f, n=None):
     plt.plot(res, [f(x) for x in res], '-o')
     plt.xlabel('x')
     plt.ylabel('f(x)')
-    
-    
+
+
 def train_2d_momentum(trainer, steps=20):
     x1, x2 = -5, -2
     v1, v2 = 0, 0
@@ -40,8 +44,9 @@ def train_2d_momentum(trainer, steps=20):
     print('epoch %d, x1 %f, x2 %f' % (i + 1, x1, x2))
     return results
 
+
 def train_pytorch_ch7(optimizer_fn, optimizer_hyperparams, features, labels,
-                    batch_size=10, num_epochs=2):
+                      batch_size=10, num_epochs=2):
     # 初始化模型
     net = nn.Sequential(
         nn.Linear(features.shape[-1], 1)
@@ -72,3 +77,32 @@ def train_pytorch_ch7(optimizer_fn, optimizer_hyperparams, features, labels,
     plt.plot(np.linspace(0, num_epochs, len(ls)), ls)
     plt.xlabel('epoch')
     plt.ylabel('loss')
+
+
+## not yet validate
+def train(train_iter, test_iter, net, loss, optimizer, device, num_epochs):
+    ls = []
+    for _ in range(num_epochs):
+        start = time.time()
+        for batch_i, (X, y) in enumerate(train_iter):
+            X = X.to(device);
+            y = y.to(device)
+            l = loss(net(X).view(-1), y)
+
+            optimizer.zero_grad()
+            l.backward()
+            optimizer.step()
+        test_loss_epoch = 0
+        for (X_test, y_test) in test_iter:
+            X_test = X_test.to(device);
+            y_test = y_test.to(device)
+            l = loss(net(X_test).view(-1), y_test)
+            test_loss_epoch += l
+        test_loss_epoch /= len(test_iter)
+        ls.append(test_loss_epoch)
+
+        # 打印结果和作图
+        print('loss: %f, %f sec per epoch' % (ls[-1], time.time() - start))
+        plt.plot(np.linspace(0, num_epochs, len(ls)), ls)
+        plt.xlabel('epoch')
+        plt.ylabel('loss')
