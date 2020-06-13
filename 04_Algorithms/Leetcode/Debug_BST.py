@@ -8,6 +8,7 @@ class TreeNode:
         self.right = right
 
 
+# 给定一个二叉树的头节点打印这个树
 class PrintTree(object):
     def printTree(self, root):
         """
@@ -36,7 +37,7 @@ class PrintTree(object):
 # from list to tree
 from collections import deque
 
-
+# 输入一个list，按照层次遍历的方式，建立一个树
 def list2Tree(data):
     n = iter(data)
     tree = TreeNode(next(n))
@@ -77,10 +78,6 @@ if __name__ == '__main__':
 
         sol = method()
         data = [5, 1, 7, None, None, 6, 8]
-        # data = [2, 1, 3]
-        # data = [3, 1, 5, 0, 2, 4, 6]
-        data = [10, 5, 15, None, None, 6, 20]
-        from L98_test_case import data
 
         tree = list2Tree(data)
         printT = PrintTree()

@@ -11,7 +11,7 @@ def stringToIntegerList(input):
     # print('input',input)
     return json.loads(input)
 
-
+# list 转换成链表
 def stringToListNode(input):
     # Generate list from the input
     # numbers = stringToIntegerList(input)
@@ -29,6 +29,7 @@ def stringToListNode(input):
     return ptr
 
 
+# 给定头节点，打印链表
 def prettyPrintLinkedList(node):
     while node and node.next:
         print(str(node.val) + "->", end='')
