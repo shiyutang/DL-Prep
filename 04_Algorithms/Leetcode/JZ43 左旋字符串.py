@@ -4,5 +4,5 @@ class Solution:
         if not s:
             return ''
         sLen = len(s)
-        idx = n%sLen
-        return s[idx:]+s[:idx]
+        idx = n % sLen
+        return s[idx:] + s[:idx]
