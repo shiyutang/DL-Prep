@@ -1,0 +1,15 @@
+# -*- coding:utf-8 -*-
+class Solution:
+    def __init__(self):
+        self.stack1 = []
+        self.stack2 = []
+
+    def push(self, node):
+        self.stack1.append(node)
+
+    def pop(self):
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+        res = self.stack2.pop()
+        return res
