@@ -9,7 +9,7 @@ class Solution:
                 print(idx, popval, pushed, popped)
             else:
                 tmpidx = pushed.index(popval)
-                if pointer - tmpidx == 1 or tmpidx >= pointer:
+                if tmpidx >= pointer -1:
                     pointer = tmpidx
                     pushed.pop(pointer)
                     print(idx, popval, pushed, popped)
@@ -29,7 +29,8 @@ def test(method, random_samples=False):
     data = [1, 2, 3, 4, 5], [4, 5, 3, 1, 2]
     data = [0, 1, 2, 3, 5, 4], [3, 2, 1, 0, 4, 5]
     data = [1, 2, 3, 4, 5], [4, 5, 3, 2, 1]
-    data = [2, 1, 3, 0], [1, 0, 3, 2]
+    data = [1], [4]
+    # data = [2, 1, 3, 0], [1, 0, 3, 2]
     res = sol.validateStackSequences(data[0], data[1])
     print(res)
 

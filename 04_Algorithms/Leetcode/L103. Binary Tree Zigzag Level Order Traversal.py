@@ -4,29 +4,29 @@ from Debug_BST import TreeNode, PrintTree, list2Tree
 # BFS with tag, 每次得到结果之后反向~
 class Solution:
     def zigzagLevelOrder(self, root: TreeNode):
-        self.res = []
+        res = []
 
         def BFSwithTag(Q):
             while Q:
                 (node, level) = Q.pop(0)
-                if level > len(self.res) - 1:
-                    self.res.append([node.val])
+                if level > len(res) - 1:
+                    res.append([node.val])
                     if level % 2 == 0 and level > 0:
-                        self.res[-2].reverse()
+                        res[-2].reverse()
                 else:
-                    self.res[level].append(node.val)
+                    res[level].append(node.val)
                 if node.left is not None:
                     Q.append((node.left, level + 1))
                 if node.right is not None:
                     Q.append((node.right, level + 1))
             if level % 2 == 1:
-                self.res[-1].reverse()
+                res[-1].reverse()
 
         if root is not None:
             queue = [(root, 0)]
             BFSwithTag(queue)
 
-        return self.res
+        return res
 
 
 # test

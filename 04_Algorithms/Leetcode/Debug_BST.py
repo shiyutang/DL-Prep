@@ -62,46 +62,24 @@ def list2Tree(data):
     return tree
 
 
-if __name__ == '__main__':
-    data = [3, 5, 2, 1, 4, 6, 7, 8, 9, 0, 1, 2, 3, 4]
-    data = [5, 1, 4, None, None, 3, 6]
-    data = [17, 6, None, 5, 20, 3, 14, 20, 16, 9, 15, 10, 3, 17, None]
-    tree = list2Tree(data)
+data = [3, 5, 2, 1, 4, 6, 7, 8, 9, 0, 1, 2, 3, 4]
+data = [5, 1, 4, None, None, 3, 6]
+data = [17, 6, None, 5, 20, 3, 14, 20, 16, 9, 15, 10, 3, 17, None]
+tree = list2Tree(data)
 
-    printT = PrintTree()
-    res = printT.printTree(tree)
+printT = PrintTree()
+res = printT.printTree(tree)
 
-    # test
-    def test(method, random_samples=False):
-        # test settings
-        times = 10
+# test
 
-        sol = method()
-        data = [5, 1, 7, None, None, 6, 8]
+# from Debug_BST import list2Tree, PrintTree
 
-        tree = list2Tree(data)
-        printT = PrintTree()
-        printT.printTree(tree)
-
-        res = sol.isValidBST(tree)
-        print('the tree {} BST '.format(["isn\'t", "is"][res]))
-
-        if random_samples:  # There are other rules constain the data, so it cannot be truly simulate by following code
-            import random
-
-            for _ in range(times):
-                len1 = random.randint(0, 20)
-                data = []
-                for __ in range(len1):
-                    num1 = random.sample([random.randint(1, 20) for i in range(20)] + [None], 1)
-                    data += num1
-                print(data)
-                tree = list2Tree(data)
-                printT = PrintTree()
-                printT.printTree(tree)
-
-                res = sol.isValidBST(tree)
-                print('the tree {} BST '.format(["isn\'t", "is"][res]))
-
-
-    test(Solution, True)
+# sol = Solution()
+# data = [8, 6, 10, 5, 7, 9, 11]
+#
+# tree = list2Tree(data)
+# printT = PrintTree()
+# printT.printTree(tree)
+#
+# res = sol.Serialize(tree)
+# print(res)
