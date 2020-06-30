@@ -62,13 +62,13 @@ def list2Tree(data):
     return tree
 
 
-data = [3, 5, 2, 1, 4, 6, 7, 8, 9, 0, 1, 2, 3, 4]
-data = [5, 1, 4, None, None, 3, 6]
-data = [17, 6, None, 5, 20, 3, 14, 20, 16, 9, 15, 10, 3, 17, None]
-tree = list2Tree(data)
-
-printT = PrintTree()
-res = printT.printTree(tree)
+# data = [3, 5, 2, 1, 4, 6, 7, 8, 9, 0, 1, 2, 3, 4]
+# data = [5, 1, 4, None, None, 3, 6]
+# data = [17, 6, None, 5, 20, 3, 14, 20, 16, 9, 15, 10, 3, 17, None]
+# tree = list2Tree(data)
+#
+# printT = PrintTree()
+# res = printT.printTree(tree)
 
 # test
 

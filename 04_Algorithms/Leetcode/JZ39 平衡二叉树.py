@@ -58,26 +58,25 @@ def list2Tree(data):
     return tree
 
 
+# 按照后序遍历，查看深度之差是不是小于等于1，并累计深度
 class Solution:
     def IsBalanced_Solution(self, pRoot):
-        maxdepth, mindepth = -1, float('inf')
 
-        def helper(node, depth, maxdepth, mindepth):
+        def depth(node):
             if not node:
-                return depth, maxdepth, mindepth
+                return 0
             else:
-                leftdepth, maxdepth, mindepth = helper(node.left, depth + 1,maxdepth, mindepth)
-                rightdepth, maxdepth, mindepth = helper(node.right, depth + 1,maxdepth, mindepth)
-                mindepth = min(mindepth, min(leftdepth, rightdepth))
-                maxdepth = max(maxdepth, max(leftdepth, rightdepth))
-                # print(node, maxdepth, mindepth)
-                return max(rightdepth, leftdepth), maxdepth, mindepth
+                leftdepth = depth(node.left)
+                rightdepth = depth(node.right)
+                print(node.val, leftdepth, rightdepth)
+                if leftdepth < 0 or rightdepth < 0 or abs(leftdepth - rightdepth) > 1:
+                    return -1
+                return max(leftdepth, rightdepth) + 1
 
         if not pRoot:
             return True
         else:
-            dep, maxdepth, mindepth = helper(pRoot, 0, maxdepth, mindepth)
-            return maxdepth - mindepth < 2
+            return depth(pRoot) > 0
 
 
 # test
@@ -86,8 +85,9 @@ def test(method, random_samples=False):
     times = 10
 
     sol = method()
-    data = [5, 1, 7, None, None, 6, 8]
+    # data = [5, 1, 7, None, None, 6, 8]
     data = [1, 2, 3, 4, 5, None, None, None, None, 6]
+    # data = [1, 2, 3, 4, 5, 6, 7]
 
     tree = list2Tree(data)
     printT = PrintTree()
