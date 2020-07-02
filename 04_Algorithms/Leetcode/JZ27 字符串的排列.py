@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-from collections import Counter
+import copy
 
 
 # 排列就是每次选择一位放在前面，之后的继承
@@ -13,8 +13,21 @@ class Solution:
                 if len(string) == pt + 1:
                     memoi.add(string)
                 else:
-                    for i in range(pt, len(string)):
-                        tmp = string  # swap string
+                    helper(string, pt + 1)
+                    for i in range(pt+1, len(string)):
+                        tmp = copy.deepcopy(string)  # swap string
+                        tmp = tmp[:pt] + tmp[i] + tmp[pt + 1:i] + tmp[pt] + tmp[i + 1:]
+
                         helper(tmp, pt + 1)
 
             helper(ss, pt=0)
+            ret = list(memoi)
+            ret.sort()
+            return ret
+
+
+sol = Solution()
+print(sol.Permutation('abc'))
+print(sol.Permutation(''))
+print(sol.Permutation('aabc'))
+print(sol.Permutation('a'))
