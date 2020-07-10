@@ -1,6 +1,4 @@
 class UnionFindSet(object):
-    """并查集"""
-
     def __init__(self, data_list):
         """初始化两个字典，一个保存节点的父节点，另外一个保存父节点的大小
         初始化的时候，将节点的父节点设为自身，size设为1"""
@@ -13,27 +11,12 @@ class UnionFindSet(object):
 
     def find_head(self, node):
         """使用递归的方式来查找父节点
-
-        在查找父节点的时候，顺便把当前节点移动到父节点上面
-        这个操作算是一个优化
         """
         father = self.father_dict[node]
         if node != father:  # node == father 代表这个节点是代表性节点，是真正得祖先
             father = self.find_head(father)
         self.father_dict[node] = father
         return father
-
-    def countUp(self):
-        for key in self.father_dict:
-            self.find_head(key)
-        resDict = {}
-        for key in self.father_dict:
-            if self.father_dict[key] in resDict:
-                resDict[self.father_dict[key]].append(key)
-            else:
-                resDict[self.father_dict[key]] = [key]
-        # print('resDict,self.father_dict',resDict,self.father_dict)
-        return resDict
 
     def is_same_set(self, node_a, node_b):
         """查看两个节点是不是在一个集合里面"""
@@ -56,56 +39,50 @@ class UnionFindSet(object):
             else:
                 self.father_dict[a_head] = b_head
                 self.size_dict[b_head] = a_set_size + b_set_size
-        # print(self.father_dict)
 
 
 class Solution:
-    def numIslands(self, grid):
-        if grid == [[]] or grid == []:
+    def numIslands(self, grid) -> int:
+        if not grid:
             return 0
 
-        n, m = len(grid), len(grid[0])
+        def filter_helper(coord):
+            x, y = coord
+            if len(grid) > x >= 0 and len(grid[0]) > y >= 0 and grid[x][y] == '1':
+                return True
+            return False
 
-        def AdjPos(x):
-            # print(pos)
-            fun = lambda x: 0 <= x[0] < n and 0 <= x[1] < m and grid[x[0]][x[1]] == '1'
-            res = list(filter(fun, [(x[0] + 1, x[1]), (x[0] - 1, x[1]), (x[0], x[1] + 1), (x[0], x[1] - 1)]))
-            # print(res)
-            return res
+        data = [(i, j) for i in range(len(grid)) for j in range(len(grid[0]))]
+        unionset = UnionFindSet(data)
 
-        posList = [(i, j) for i in range(n) for j in range(m)]
-        # print('posList',posList)
-        connectSet = set()
+        zerocnt = 0
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j] == '1':
+                    for nei in filter(filter_helper, ((i - 1, j), (i, j - 1))):
+                        unionset.union(nei, (i, j))
+                else:
+                    zerocnt += 1
 
-        UF = UnionFindSet(posList)
-        for pos in posList:
-            if grid[pos[0]][pos[1]] == '1':
-                adjpoint = AdjPos(pos)
-                for point in adjpoint:
-                    if not (point, pos) in connectSet:
-                        # print('pos,point',pos,point)
-                        UF.union(pos, point)
-                        connectSet.add((pos, point))
+        fatherset = set()
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                father = unionset.find_head((i, j))
+                fatherset.add(father)
 
-        resDict = UF.countUp()
-        islandCnt = 0
-        for key in resDict:
-            if grid[key[0]][key[1]] == '1':
-                islandCnt += 1
-
-        return islandCnt
+        return len(fatherset) - zerocnt
 
 
 sol = Solution()
-# print(sol.numIslands([["1","1","1","1","0"],
-# 					  ["1","1","0","1","0"],
-# 					  ["1","1","0","0","0"],
-# 					  ["0","0","0","0","0"]]))
+print(sol.numIslands([["1", "1", "1", "1", "0"],
+                      ["1", "1", "0", "1", "0"],
+                      ["1", "1", "0", "0", "0"],
+                      ["0", "0", "0", "0", "0"]]))
 
-# print(sol.numIslands([["1","0","1","1","0"],
-# 					  ["1","0","0","1","1"],
-# 					  ["1","0","0","0","0"],
-# 					  ["0","1","0","1","0"]]))
+print(sol.numIslands([["1", "0", "1", "1", "0"],
+                      ["1", "0", "0", "1", "1"],
+                      ["1", "0", "0", "0", "0"],
+                      ["0", "1", "0", "1", "0"]]))
 
 print(sol.numIslands([["1", "0", "1", "1", "0"],
                       ["1", "0", "0", "1", "1"],

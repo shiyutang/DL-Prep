@@ -1,5 +1,8 @@
 class UnionFindSet(object):
     def __init__(self, data_list):
+        """
+        :param data_list: 初始化的数据集
+        """
         self.father_dict = {}
         self.size_dict = {}
 
@@ -33,7 +36,7 @@ class UnionFindSet(object):
         if a_head != b_head:
             a_set_size = self.size_dict[a_head]
             b_set_size = self.size_dict[b_head]
-            if (a_set_size >= b_set_size):
+            if a_set_size >= b_set_size:
                 self.father_dict[b_head] = a_head
                 self.size_dict[a_head] = a_set_size + b_set_size
             else:
