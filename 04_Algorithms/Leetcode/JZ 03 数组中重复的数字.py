@@ -1,21 +1,17 @@
-import random
+from random import random
 
 
 class Solution:
     def findRepeatNumber(self, nums) -> int:
-        nums.sort()
+        memoi = set()
         for i, num in enumerate(nums):
-            if i > 0:
-                if num == prev:
-                    return num
-                else:
-                    prev = num
+            if num in memoi:
+                return num
             else:
-                prev = num
+                memoi.add(num)
 
 
 sol = Solution()
 print(sol.findRepeatNumber([2, 1, 3, 3]))
-print(sol.findRepeatNumber([]))
-data = [random.randint(2, 100000) for _ in range(100000)]
-print(sol.findRepeatNumber(data))
+# print(sol.findRepeatNumber([]))
+# print(sol.findRepeatNumber([2, 1, 3, 1, 4, 5]))
