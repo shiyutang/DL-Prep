@@ -12,7 +12,7 @@ class Linkedlist:
         self.head = None
         self.tail = None
 
-    def insertNode(self,value):
+    def insertNode(self, value):
         node = ListNode(value)
         if not self.head:
             self.head = node
@@ -23,11 +23,6 @@ class Linkedlist:
 
 class Solution:
     def addTwoNumbers(self, l1, l2):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
         carryIn = False
         head = None
         while l1 or l2 or carryIn:
@@ -41,7 +36,7 @@ class Solution:
                 carryIn = False
             if number >= 10:
                 carryIn = True
-                number = number%10
+                number = number % 10
             node = ListNode(number)
             if not head:
                 head = node
@@ -53,6 +48,7 @@ class Solution:
             if l2:
                 l2 = l2.next
         return head
+
 
 def test():
     llist1 = Linkedlist()
@@ -70,14 +66,15 @@ def test():
     llist4.insertNode(1)
 
     sol = Solution()
-    result = sol.addTwoNumbers(llist1.head,llist2.head)
+    result = sol.addTwoNumbers(llist1.head, llist2.head)
     while result:
         print(result.val)
         result = result.next
 
-    result = sol.addTwoNumbers(llist3.head,llist4.head)
+    result = sol.addTwoNumbers(llist3.head, llist4.head)
     while result:
         print(result.val)
         result = result.next
+
 
 test()

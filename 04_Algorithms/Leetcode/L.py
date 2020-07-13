@@ -40,4 +40,3 @@ class Solution:
         Qpos[0] = 0
         result = self.recursion(Qpos,Qnum)
         return self.prettyformat(result,n)
-        
