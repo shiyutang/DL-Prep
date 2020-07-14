@@ -5,8 +5,8 @@ class Solution(object):
         pivotidx = 0
         right = []
         left = []
-        for i in range(1,len(nums)):
-            if nums[i]<=pivot:
+        for i in range(1, len(nums)):
+            if nums[i] <= pivot:
                 left.append(nums[i])
                 pivotidx += 1
             else:
@@ -18,12 +18,12 @@ class Solution(object):
         elif pivotidx < realidx:
             # print('find the right part')
             # print(right)
-            res = self.findKthLargest(right,k)
+            res = self.findKthLargest(right, k)
         else:
             # print('find the left part')
             # print(left)
             # print(k-len(nums[pivotidx:]))
-            res = self.findKthLargest(left,k-len(right)-1)
+            res = self.findKthLargest(left, k - len(right) - 1)
         return res
 
 
@@ -32,5 +32,5 @@ sol = Solution()
 # print(res)
 # res = sol.findKthLargest([3,2,1,5,6,4],2)
 # print(res)
-res = sol.findKthLargest([3,4,3,2,1,45,6,3,6,2,43,53,3,2,2],3)
+res = sol.findKthLargest([3, 4, 3, 2, 1, 45, 6, 3, 6, 2, 43, 53, 3, 2, 2], 3)
 print(res)
