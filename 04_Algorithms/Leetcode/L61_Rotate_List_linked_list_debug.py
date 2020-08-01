@@ -94,8 +94,8 @@ sol = Solution()
 # head = stringToListNode([1,2,3,4,5])
 # prettyPrintLinkedList(sol.rotateRight(head,2))
 
-# from .L61_Rotate_List_linked_list_debug import stringToListNode,prettyPrintLinkedList
+# from L61_Rotate_List_linked_list_debug import stringToListNode,prettyPrintLinkedList
 
-head = stringToListNode([0, 1, 2])
-prettyPrintLinkedList(head)
-prettyPrintLinkedList(sol.rotateRight(head, 4))
+# head = stringToListNode([0, 1, 2])
+# prettyPrintLinkedList(head)
+# prettyPrintLinkedList(sol.rotateRight(head, 4))
