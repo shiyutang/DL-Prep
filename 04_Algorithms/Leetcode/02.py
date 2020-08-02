@@ -1,17 +1,21 @@
 import sys
 
-def buildGraph(num):
-    print(sum(num))
+
+class task:
+    def eliminate(self, slist):
+
+        for ele in slist:
+            cnt = 0
+            while ele != 0:
+                ele = ele // 2
+                cnt += 1
+            print(cnt)
 
 
-
-
-
-people = sys.stdin.readline().strip()  # 去除首尾空格
+cases = sys.stdin.readline().strip()  # 去除首尾空格
 ret = []
-for i in range(people):
-    line = sys.stdin.readline().strip().split(' ')  # 返回分割好的字符列表
-    ret.append(line[0])
-buildGraph(ret)
-
-
+for i in range(int(cases)):
+    t = sys.stdin.readline().strip()  # 返回分割好的字符列表
+    ret.append(int(t))
+sol = task()
+sol.eliminate(ret)
