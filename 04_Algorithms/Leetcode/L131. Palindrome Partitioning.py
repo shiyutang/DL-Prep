@@ -30,8 +30,7 @@ class Solution:
                         tmp.append(s[start:start + jk + 1])
 
                         helper(start + jk + 1,  tmp)
-                    else:
-                        continue
+
 
         helper(0, [])
 
