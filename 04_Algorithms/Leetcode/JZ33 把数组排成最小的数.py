@@ -42,5 +42,7 @@ class Solution:
         return int(ret)
 
 
+
+
 sol = Solution()
 print(sol.PrintMinNumber([3, 32, 321]))

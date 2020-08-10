@@ -8,7 +8,7 @@ class ListNode:
         self.next = None
 
 q.put((2, ListNode(2)))
-q.put((2, ListNode(1)))
+q.put((1, ListNode(1)))
 q.put((3, ListNode(3)))
 
 while not q.empty():
