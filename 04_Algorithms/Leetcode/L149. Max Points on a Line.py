@@ -1,53 +1,53 @@
 class Solution:
-	def maxPoints(self, points):
-		if points == [] or points == [[]]:
-			return 0
-		elif len(points) == 1:
-			return 1
+    def maxPoints(self, points):
+        if points == [] or points == [[]]:
+            return 0
+        elif len(points) == 1:
+            return 1
 
-		kbDict,freqDict,k,b,newpoints,lenPoint = {},{},0,0,[],len(points)
-		for i in range(lenPoint):
-			if not points[i] in newpoints:
-				newpoints.append(points[i])
-				freqDict[(points[i][0],points[i][1])] = 1
-			else:
-				freqDict[(points[i][0],points[i][1])] += 1
-		print('freqDict',freqDict)
+        kbDict, freqDict, k, b, newpoints, lenPoint = {}, {}, 0, 0, [], len(points)
+        for i in range(lenPoint):
+            if not points[i] in newpoints:
+                newpoints.append(points[i])
+                freqDict[(points[i][0], points[i][1])] = 1
+            else:
+                freqDict[(points[i][0], points[i][1])] += 1
+        print('freqDict', freqDict)
 
+        for i in range(len(newpoints)):
+            for j in range(i + 1, len(newpoints)):
+                if not newpoints[i][0] == newpoints[j][0]:
+                    k = (newpoints[i][1] - newpoints[j][1]) / (newpoints[i][0] - newpoints[j][0])
+                    b = newpoints[i][1] - k * newpoints[i][0]
+                    print(k, b)
+                    k, b = int(round(k * 100)) / 100, int(round(b * 100)) / 100
 
-		for i in range(len(newpoints)):
-			for j in range(i+1,len(newpoints)):
-				if not newpoints[i][0] == newpoints[j][0]:
-					k = (newpoints[i][1]-newpoints[j][1])/(newpoints[i][0]-newpoints[j][0])
-					b = newpoints[i][1]-k*newpoints[i][0]
-					print(k,b)
-					k,b = int(round(k*100))/100,int(round(b*100))/100
+                key = [(k, b), newpoints[i][0]][newpoints[i][0] == newpoints[j][0]]
 
-				key = [(k,b),newpoints[i][0]][newpoints[i][0] == newpoints[j][0]]
+                if key in kbDict:
+                    if not j in kbDict[key]:
+                        kbDict[key].append(j)
+                else:
+                    kbDict[key] = [i, j]
 
-				if key in kbDict :
-					if not j in kbDict[key]:
-						kbDict[key].append(j)
-				else:
-					kbDict[key] = [i,j]
+        print('kbDict', kbDict)
+        print('freqDict', freqDict)
+        maxval = 0
+        if kbDict == {}:
+            return freqDict[(newpoints[0][0], newpoints[0][1])]
+        for item in kbDict:
+            sumval = 0
+            for idx in kbDict[item]:
+                sumval += freqDict[(newpoints[idx][0], newpoints[idx][1])]
+            if sumval > maxval:
+                maxval = sumval
 
-		print('kbDict',kbDict)
-		print('freqDict',freqDict)
-		maxval = 0
-		if kbDict == {}:
-			return freqDict[(newpoints[0][0],newpoints[0][1])]
-		for item in kbDict:
-			sumval = 0
-			for idx in kbDict[item]:
-				sumval += freqDict[(newpoints[idx][0],newpoints[idx][1])]
-			if sumval>maxval:
-				maxval = sumval
+        return maxval
 
-		return maxval
 
 sol = Solution()
 # print(sol.maxPoints([[1,1],[2,2],[3,3]]))
-print(sol.maxPoints([[0,0],[94911151,94911150],[94911152,94911151]])) #2
+print(sol.maxPoints([[0, 0], [94911151, 94911150], [94911152, 94911151]]))  # 2
 # print(sol.maxPoints([[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]))
 # print(sol.maxPoints([[1432,1342428303],[3*1432,3*1342428303],[10*1432,10*1342428303]]))
 # print(sol.maxPoints([[0,0],[0,1],[0,20]]))
