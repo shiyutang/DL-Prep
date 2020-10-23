@@ -5,7 +5,7 @@
 import heapq
 
 
-class task:
+class task0:
     def solve(root, N):
         if not root or N <= 0:
             return root
@@ -60,6 +60,73 @@ print(heapq.heappop(a))
 print(heapq.heappop(a))
 print(heapq.heappop(a))
 print(heapq.heappop(a))
+
+
+##########
+# round2 #
+##########
+
+# int array A -> res
+# 3sum=0
+# [-1,-0, 1] == [1,0,-1]
+# [1,1,1,0,0,-1,-1,-2]
+
+class task:
+    def solve(self, array: list) -> list:
+        array.sort()
+        print(array)
+        ret = []
+        for i, first in enumerate(array[:-2]):
+            remain = 0 - first
+            p1, p2 = i + 1, len(array) - 1
+            while p1 < p2:
+                if array[p1] + array[p2] < remain:
+                    p1 += 1
+                elif array[p1] + array[p2] == remain:
+                    if not ret or (ret and ret[-1] != [first, array[p1], array[p2]]):
+                        ret.append([first, array[p1], array[p2]])
+
+                    while p1 < p2 and array[p1 + 1] == array[p1]:
+                        p1 += 1
+                    p1 += 1
+                    p2 -= 1
+                else:
+                    p2 -= 1
+
+        return ret
+
+
+# t = task()
+# print(t.solve([1, 1, 1, 0, 0, 0, 0, -1, -1, -2, 2]))
+
+
+# array [ai] ai>0 -> 不能由任意一个子集求和的最小正整数
+# [1,1,2,6,7,8]-> 1,2,3,4 -> 5
+
+class task2:
+    def solve(self, array):
+        prevfill = 0
+        array.sort()
+
+        # 计算所有子集可能和
+        for index in range(len(array)):
+            if index == 0:
+                if array[index] > 1:
+                    return 1
+                else:
+                    prevfill = 1
+            else:
+                if prevfill + 1 < array[index]:
+                    return prevfill + 1
+                else:
+                    prevfill = array[index] + prevfill
+
+        return prevfill + 1
+
+
+t2 = task2()
+print(t2.solve([1, 1, 2, 6, 7, 8]))
+
 
 
 

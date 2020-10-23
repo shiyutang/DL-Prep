@@ -29,7 +29,7 @@ def multicore():
     p2.start()
     p1.join()
     p2.join()
-    print('process', q.get())
+    print('process', q.get()+q.get())
 
 
 def normal():
