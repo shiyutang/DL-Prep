@@ -27,7 +27,7 @@ for key in remaindict:
     tmp = data[:]
     if key == k or key == k / 2:
         reslen = n - len(remaindict[key]) + 1
-        data =
+        # data =
     else:
         if (k - key) not in remaindict:
             if allflag:

@@ -35,31 +35,33 @@
 # 				return self.isValid(part1[:-1]+part2[1:])
 
 class Solution(object):
-	"""!! the parenthesis may not be symetric
-	restrained by the recursive thought"""
-	def isValid(self, s):
-		pairs = {'{':'}', '(':')', '[':']','':''}
-		backs = [')','}',']']
-		if len(s) %2 == 1:
-			return False
-		if s == '':
-			return True
-		for i,ch in enumerate(s):
-			if ch in backs:
-				# print(ch,s[i-1])
-				if i-1 < 0 or pairs[s[i-1]] != ch:
-					return False
-				else:
-					return self.isValid(s[:i-1]+s[i+1:])
-		return False
+    """!! the parenthesis may not be symetric
+    restrained by the recursive thought"""
+
+    def isValid(self, s):
+        pairs = {'{': '}', '(': ')', '[': ']', '': ''}
+        backs = [')', '}', ']']
+        if len(s) % 2 == 1:
+            return False
+        if s == '':
+            return True
+        for i, ch in enumerate(s):
+            if ch in backs:
+                # print(ch,s[i-1])
+                if i - 1 < 0 or pairs[s[i - 1]] != ch:
+                    return False
+                else:
+                    return self.isValid(s[:i - 1] + s[i + 1:])
+        return False
 
 
 class Solution:
-	'''solution from leetcode
-	by using stack deal and pop is much simple
-	don't have to start over each time change s'''
+    '''solution from leetcode
+    by using stack deal and pop is much simple
+    don't have to start over each time change s'''
+
     def isValid(self, s: str) -> bool:
-        pairs = {")" : "(", "]" : "[", "}" : "{"}
+        pairs = {")": "(", "]": "[", "}": "{"}
         stack = []
         for c in s:
             if c in ["(", "[", "{"]:
@@ -70,16 +72,17 @@ class Solution:
                 stack.pop()
         return not stack
 
-sol= Solution()
-res = sol.isValid( "[()]")
+
+sol = Solution()
+res = sol.isValid("[()]")
 print(res)
-res = sol.isValid( "{[()]}")
+res = sol.isValid("{[()]}")
 print(res)
-res = sol.isValid( "[](){}")
+res = sol.isValid("[](){}")
 print(res)
-res = sol.isValid( "[]{}")
+res = sol.isValid("[]{}")
 print(res)
-res = sol.isValid( "[]")
+res = sol.isValid("[]")
 print(res)
 res = sol.isValid('([)]')
 print(res)
@@ -92,4 +95,3 @@ res = sol.isValid("(([]){})")
 print(res)
 res = sol.isValid("")
 print(res)
-		
