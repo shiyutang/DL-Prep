@@ -10,7 +10,7 @@ class Solution:
         if not (PLen == SLen) and (not ("*" in p) or not PLen - 2 * countStar <= SLen):
             return False
         else:
-            equal = (s[0] == p[0]) and (p[0] == ".")
+            equal = (s[0] == p[0]) or (p[0] == ".")
             if not equal and p[1] != "*":
                 return False
             elif not equal and p[1] == "*":

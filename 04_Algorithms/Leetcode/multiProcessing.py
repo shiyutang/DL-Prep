@@ -2,7 +2,7 @@ import multiprocessing as mp
 
 
 def job1(A, num, l):
-    l.acquire()
+    l.acquire()  # 取消锁之后，导致进程开始前后不同，p2先开始了，但是数值依旧没有抢夺
     if num == 1:
         print('p1 start')
     else:

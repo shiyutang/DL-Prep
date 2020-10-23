@@ -14,7 +14,7 @@ class MedianFinder:
     def addNum(self, num: int) -> None:
         if len(self.big) == len(self.small):
             heappush(self.big, -heappushpop(self.small, -num))
-        else:
+        else:  # 只会是最大堆中数目较多的情形，所以就是放入最小堆，同时为了输出最小堆的最大，因此给最小堆中加入负号
             heappush(self.small, -heappushpop(self.big, num))
 
     def findMedian(self) -> float:
@@ -25,9 +25,9 @@ class MedianFinder:
 
 
 # Your MedianFinder object will be instantiated and called as such:
-# obj = MedianFinder()
-# obj.addNum(num)
-# param_2 = obj.findMedian()
+obj = MedianFinder()
+obj.addNum(5)
+param_2 = obj.findMedian()
 
 # ["MedianFinder","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian","addNum","findMedian"]
 # [[],[-1],[],[-2],[],[-3],[],[-4],[],[-5],[]]
@@ -37,7 +37,7 @@ from heapq import *
 
 # 堆排序的特点：每次插入一个结点只需要 lg(h),h 为排序的层高，因为非常适合对差不多排序好的序列进行快速排序
 
-class MedianFinder:
+class MedianFinder2:
 
     def __init__(self):
         """

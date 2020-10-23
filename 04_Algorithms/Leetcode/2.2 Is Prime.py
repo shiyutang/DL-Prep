@@ -13,7 +13,7 @@ from time import time
 
 def eratosthenes(n):
     is_prime = [True] * (n + 1)  # 建立一个boolean类型的数组，用来存储你要判断某个范围内自然数中的质数
-    for i in range(2, int(n ** 0.5) + 1):  # 只需要到根号就可以了，因为根号的二倍超出想求的范围，根号之后的已经被之前的倍数更新过了
+    for i in range(2, int(n ** 0.5) + 1):  # 只需要到根号就可以了，因为根号的平方超出想求的范围，根号之后的已经被之前的倍数更新过了
         if is_prime[i]:  # 如果原本 i 是质数，从小到o'p大，能保证前面的一定是质数
             for j in range(i * i, n + 1, i):  # 则 i 的所有倍数均不是质数
                 is_prime[j] = False
@@ -45,10 +45,11 @@ def oulashai(r):
     return common
 
 # test
+num = 10**12
 def test(method):
     t1 = time()
     if "era" in method:
-        res = eratosthenes(120000)
+        res = eratosthenes(num)
     elif "isp":
         res = []
         for i in range(2, 120000):
@@ -61,9 +62,9 @@ def test(method):
 
 
 result1, time1 = test("era")
-result2, time2 = test("oula")
+# result2, time2 = test("oula")
 result3, time3 = test("isp")
 
-if not result2 == result1:
+if not result3 == result1:
     print("result1 is {} \nresult2 is {}".format(result1, result3))
-print("era needs {} secs; oula needs {} secs".format(time1, time2))
+print("era needs {} secs; isp needs {} secs".format(time1, time3))

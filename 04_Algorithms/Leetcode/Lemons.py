@@ -4,13 +4,16 @@ def parser():
         data = list(input().split(' '))
         for number in data:
             if len(number) > 0:
-                yield(number)   
+                yield (number)
+
 
 input_parser = parser()
+
 
 def get_word():
     global input_parser
     return next(input_parser)
+
 
 def get_number():
     data = get_word()
@@ -19,18 +22,19 @@ def get_number():
     except ValueError:
         return float(data)
 
-N,M,S = get_number(),get_number(),get_number()
+
+N, M, S = get_number(), get_number(), get_number()
 # N,M,S = 4,1,2
 
-travelCost = (N-1)*M
-start,end,cnt = 2,N,0
+travelCost = (N - 1) * M
+start, end, cnt = 2, N, 0
 # Binary search 
-while start<=end:
-    mid = (start+end)//2
-    start = mid+1
+while start<= end:
+    mid = (start + end) // 2
+    start = mid + 1
     cnt += 1
-    print('start,end,mid',start,end,mid)
-print('cnt',cnt)
-res = cnt*S
+    print('start,end,mid', start, end, mid)
+print('cnt', cnt)
+res = cnt * S
 
-print(res+travelCost)
+print(res + travelCost)
